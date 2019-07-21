@@ -12,8 +12,7 @@ package ca.sheridancollege.project;
  *
  * @author dancye, 2018
  */
-public abstract class Card {
-
+public class Card {
     //enum Rank holds all possible ranks for play cards
     public enum Rank {
         ACE,
@@ -39,6 +38,15 @@ public abstract class Card {
         DIAMONDS;
     }
     //default modifier for child classes
+    private final Rank rank;
+    private final Suit suit; 
+    private int actualvalue ; 
+    
+    public Card ( Rank rank, Suit suit){
+        this.rank = rank ; 
+        this.suit = suit; 
+        
+    }
 
     /**
      * Students should implement this method for their specific children classes
@@ -47,6 +55,10 @@ public abstract class Card {
      * regular playing card etc.
      */
     @Override
-    public abstract String toString();
+    public  String toString(){
+        String temp;
+        temp = this.rank + " of "+ this.suit;
+        return temp ;
+    }
 
 }
