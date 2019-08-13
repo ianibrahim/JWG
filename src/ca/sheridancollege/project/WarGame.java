@@ -56,9 +56,8 @@ public class WarGame extends Game {
                     }
                 }
             }
-            declareWinner();
         }
-        
+        declareWinner();
     }
 
     private void addToPile(Card c1, Card c2) {
