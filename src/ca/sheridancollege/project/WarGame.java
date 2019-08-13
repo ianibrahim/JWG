@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class WarGame extends Game {
 
-    private final int tieBreaker = 3;
+    
     private Player p1, p2;
     private final ArrayList<Card> deck = GroupOfCards.getInstance();
     private final ArrayList<Card> pile = new ArrayList<>();
@@ -23,7 +23,7 @@ public class WarGame extends Game {
 
     @Override
     public void play() {
-        while (!p1.hasCards() && !p2.hasCards()) {
+        while (p1.hasCards() && p2.hasCards()) {
             Card card1 = p1.play();
             System.out.println("Player :" + p1.getPlayerID() + " has a" + card1);
             Card card2 = p2.play();
@@ -41,8 +41,9 @@ public class WarGame extends Game {
                 winAnnouncement(p2);
             } else {
                 System.out.println("W**A**R");
-                addToPile(card1, card2);
-                while (compared == 0) {
+               
+                while (compared == 0 ) {
+                    if (!(p1.hand.size()==0&&p2.hand.size()==0)){
                     Card c1 = p1.play();
                     System.out.println("Player :" + p1.getPlayerID() + " has a" + card1);
                     Card c2 = p2.play();
@@ -50,10 +51,14 @@ public class WarGame extends Game {
                     addToPile(c1, c2);
                     compared = +(c1.cardValue() - c2.cardValue());
                 }
-
+                    else{
+                        declareWinner();
+                    }
+                }
             }
-
+            declareWinner();
         }
+        
     }
 
     private void addToPile(Card c1, Card c2) {
@@ -88,7 +93,7 @@ public class WarGame extends Game {
 
     @Override
     public void declareWinner() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Winner !!");
     }
 
     private void getplayerInfo() {

@@ -27,7 +27,7 @@ public abstract class Player
 
    public boolean hasCards ()
    {
-      return hand.isEmpty();
+      return !hand.isEmpty();
    }
 
    /**
