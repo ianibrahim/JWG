@@ -27,9 +27,9 @@ public class WarGame extends Game
    {
       while (!p1.hasCards() && !p2.hasCards()) {
          Card card1 = p1.play();
-         System.out.println("Player :" + p1.getPlayerID() + "has" + card1);
+         System.out.println("Player :" + p1.getPlayerID() + " has a" + card1);
          Card card2 = p2.play();
-         System.out.println("Player :" + p2.getPlayerID() + "has" + card2);
+         System.out.println("Player :" + p2.getPlayerID() + " has a" + card2);
          int compared = card1.cardValue() - card2.cardValue();
          if (compared > 0) {
             p1.hand.add(card2);
@@ -41,6 +41,9 @@ public class WarGame extends Game
          }
          else {
             System.out.println("W**A**R");
+            for (int i = 0; i < tieBreaker;) {
+               
+            }
          }
 
 
