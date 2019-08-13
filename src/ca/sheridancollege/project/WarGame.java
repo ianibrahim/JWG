@@ -12,7 +12,7 @@ public class WarGame extends Game {
     private final int tieBreaker = 3;
     private Player p1, p2;
     private final ArrayList<Card> deck = GroupOfCards.getInstance();
-    private ArrayList<Card> pile = new ArrayList<>();
+    private final ArrayList<Card> pile = new ArrayList<>();
 
     public WarGame() {
         super("War Game");
@@ -29,10 +29,10 @@ public class WarGame extends Game {
             Card card2 = p2.play();
             System.out.println("Player :" + p2.getPlayerID() + " has a" + card2);
             int compared = card1.cardValue() - card2.cardValue();
-            addToPile(card1,card2);
-            
+            addToPile(card1, card2);
+
             if (compared > 0) {
-                
+
                 winAnnouncement(p1);
                 grantPile(p1);
 
@@ -47,8 +47,8 @@ public class WarGame extends Game {
                     System.out.println("Player :" + p1.getPlayerID() + " has a" + card1);
                     Card c2 = p2.play();
                     System.out.println("Player :" + p2.getPlayerID() + " has a" + card2);
-                    addToPile(c1,c2);
-                    compared=+(c1.cardValue()-c2.cardValue());
+                    addToPile(c1, c2);
+                    compared = +(c1.cardValue() - c2.cardValue());
                 }
 
             }
@@ -62,12 +62,14 @@ public class WarGame extends Game {
     }
 
     private void grantPile(Player p) {
-    while (!pile.isEmpty()) {
-        p.hand.add(pile.get(0));
-        pile.remove(0);
-    }   
+        while (!pile.isEmpty()) {
+             System.out.println("Pile size"+ pile.size());
+            p.hand.add(pile.get(0));
+            pile.remove(0);
+             System.out.println("Pile size"+ pile.size());
+           
+        }
     }
-    
 
     private void winAnnouncement(Player p) {
         System.out.println("Player " + p.getPlayerID() + "Won the round");

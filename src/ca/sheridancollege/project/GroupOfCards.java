@@ -19,10 +19,13 @@ public class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
     private static ArrayList<Card> cards;
+    static{
+        GroupOfCards deck = new GroupOfCards();
+    }
 
     private GroupOfCards() {
 
-        GroupOfCards.cards = new ArrayList();
+        this.cards = new ArrayList();
         for (Card.Suit s : Card.Suit.values()) {
             for (Card.Rank r : Card.Rank.values()) {
                 cards.add((new Card(r, s)));
