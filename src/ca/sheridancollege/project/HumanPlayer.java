@@ -19,7 +19,7 @@ public class HumanPlayer extends Player
    @Override
    public Card play ()
    {
-      System.out.println("hit enter to play");
+      System.out.println("you Have :"+hand.size()+"Press Enter to play a card ");
       input.nextLine();
       Card topCard = hand.get(0);
       hand.remove(0);

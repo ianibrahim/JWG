@@ -15,38 +15,27 @@ import java.util.Collections;
  *
  * @author dancye
  */
-public class GroupOfCards
-{
+public class GroupOfCards {
 
-   //The group of cards, stored in an ArrayList
-   private static ArrayList<Card> cards;
+    //The group of cards, stored in an ArrayList
+    private static ArrayList<Card> cards;
 
-   private static final GroupOfCards dOC;
+    private GroupOfCards() {
 
-   static {
-      dOC = new GroupOfCards(52);
-   }
+        GroupOfCards.cards = new ArrayList();
+        for (Card.Suit s : Card.Suit.values()) {
+            for (Card.Rank r : Card.Rank.values()) {
+                cards.add((new Card(r, s)));
 
-   private GroupOfCards (int givenSize)
-   {
-
-
-      this.cards = new ArrayList();
-      for (int i = 0; i < givenSize; i++) {
-         for (Card.Rank r : Card.Rank.values()) {
-            for (Card.Suit s : Card.Suit.values()) {
-               cards.add((new Card(r, s)));
             }
-         }
-      }
-      Collections.shuffle(cards);
-   }
+        }
 
-   public static ArrayList<Card> getInstance ()
-   {
-      return dOC.cards;
-   }
+        Collections.shuffle(cards);
 
+    }
 
+    public static ArrayList<Card> getInstance() {
+        return GroupOfCards.cards;
+    }
 
 }//end class

@@ -15,7 +15,7 @@ public class BotPlayer extends Player
    @Override
    public Card play ()
    {
-
+       System.out.println("PC Has :"+hand.size()+"Cards");
       Card topCard = hand.get(0);
       hand.remove(0);
       return topCard;

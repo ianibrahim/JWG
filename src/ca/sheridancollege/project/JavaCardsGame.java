@@ -19,6 +19,7 @@ public class JavaCardsGame
                WarGame warGame = new WarGame();
 
                break;
+               
             case 0:
                run = false;
                break;

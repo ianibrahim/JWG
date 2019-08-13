@@ -43,7 +43,7 @@ public class Card
    //default modifier for child classes
    private final Rank rank;
    private final Suit suit;
-   private int actualvalue;
+
 
    public Card (Rank rank, Suit suit)
    {
