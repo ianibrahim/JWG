@@ -12,53 +12,107 @@ package ca.sheridancollege.project;
  *
  * @author dancye, 2018
  */
-public class Card {
-    //enum Rank holds all possible ranks for play cards
-    public enum Rank {
-        ACE,
-        TWO,
-        THREE,
-        FOUR,
-        FIVE,
-        SIX,
-        SEVEN,
-        EIGHT,
-        NINE,
-        TEN,
-        JACK,
-        QUEEN,
-        KING;
-    }
+public class Card
+{
+   //enum Rank holds all possible ranks for play cards
+   public enum Rank
+   {
+      ACE,
+      TWO,
+      THREE,
+      FOUR,
+      FIVE,
+      SIX,
+      SEVEN,
+      EIGHT,
+      NINE,
+      TEN,
+      JACK,
+      QUEEN,
+      KING;
+   }
 
-    //enum Suit holds the 4 known card types 
-    public enum Suit {
-        CLUBS,
-        SPADES,
-        HEARTS,
-        DIAMONDS;
-    }
-    //default modifier for child classes
-    private final Rank rank;
-    private final Suit suit; 
-    private int actualvalue ; 
-    
-    public Card ( Rank rank, Suit suit){
-        this.rank = rank ; 
-        this.suit = suit; 
-        
-    }
+   //enum Suit holds the 4 known card types 
+   public enum Suit
+   {
+      CLUBS,
+      SPADES,
+      HEARTS,
+      DIAMONDS;
+   }
+   //default modifier for child classes
+   private final Rank rank;
+   private final Suit suit;
+   private int actualvalue;
 
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a
-     * regular playing card etc.
-     */
-    @Override
-    public  String toString(){
-        String temp;
-        temp = this.rank + " of "+ this.suit;
-        return temp ;
-    }
+   public Card (Rank rank, Suit suit)
+   {
+      this.rank = rank;
+      this.suit = suit;
+
+   }
+
+   public int cardValue ()
+   {
+      int trueValue = 0;
+      switch (this.rank) {
+         case ACE:
+            trueValue = 14;
+            break;
+
+         case TWO:
+            trueValue = 2;
+            break;
+         case THREE:
+            trueValue = 3;
+            break;
+         case FOUR:
+            trueValue = 4;
+            break;
+         case FIVE:
+            trueValue = 5;
+            break;
+         case SIX:
+            trueValue = 6;
+            break;
+         case SEVEN:
+            trueValue = 7;
+            break;
+         case EIGHT:
+            trueValue = 8;
+            break;
+         case NINE:
+            trueValue = 9;
+            break;
+         case TEN:
+            trueValue = 10;
+            break;
+         case JACK:
+            trueValue = 11;
+            break;
+         case QUEEN:
+            trueValue = 12;
+            break;
+         case KING:
+            trueValue = 13;
+            break;
+
+      }
+      return trueValue;
+   }
+
+   /**
+    * Students should implement this method for their specific children classes
+    *
+    * @return a String representation of a card. Could be an UNO card, a
+    * regular playing card etc.
+    */
+   @Override
+   public String toString ()
+   {
+      String temp;
+      temp = this.rank + " of " + this.suit;
+      return temp;
+   }
 
 }

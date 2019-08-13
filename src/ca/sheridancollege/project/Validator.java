@@ -1,7 +1,8 @@
 package ca.sheridancollege.project;
 import java.util.Scanner;
 /**
- * @author Rich Smith at ZenOfProgramming.com
+ * @author Ian Ibrahim
+ * @author
  */
 public class Validator
 {
