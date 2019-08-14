@@ -61,12 +61,12 @@ public class WarGame extends Game {
                     compared = +(c1.cardValue() - c2.cardValue());
                 }
                     else{
-                        declareWinner();
+                        System.out.println(declareWinner());
                     }
                 }
             }
         }
-        declareWinner();
+        System.out.println(declareWinner());
     }
 
     /**
@@ -117,17 +117,18 @@ public class WarGame extends Game {
  /**
  * Declares the winner once a player has won the game. Returns application to
  * the game select screen.
+     * @return returns the winner string
  */
     @Override
-    public void declareWinner() {
+    public String declareWinner() {
         if(p1.hasCards()== false){
-        System.out.println(p2.getPlayerID() + " is the Winner !!");
+        return p2.getPlayerID() + " is the Winner !!";
         }
         else if(p2.hasCards()== false){
-        System.out.println(p1.getPlayerID() + " is the Winner !!");    
+        return p1.getPlayerID() + " is the Winner !!";    
         }
-        else if(p1.hasCards() == false && p2.hasCards() == false){
-            System.out.println(p1.getPlayerID() + " and " + p2.getPlayerID() + " have tied the game!");
+        else{
+            return p1.getPlayerID() + " and " + p2.getPlayerID() + " have tied the game!";
         }
     }
 
