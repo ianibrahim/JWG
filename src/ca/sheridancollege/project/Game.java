@@ -56,7 +56,7 @@ public abstract class Game
     /**
      * Declare the winner for the game.
      */
-    public abstract void declareWinner();
+    public abstract String declareWinner();
 
    
     
